@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap');
+
+@import 'tailwindcss';
+
+@plugin 'tailwindcss-animate';
+
+@source '../views';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+
+/* Custom theme variables */
+@theme {
+    --font-mainFont: 'IBM Plex Sans Arabic', sans-serif;
+    --color-mainColor: #393962;
+    --color-mainColor-50: #ebebef;
+    --color-mainColor-100: #c2c2ce;
+    --color-mainColor-200: #e6e6ff;
+    --color-mainColor-300: #7a7a96;
+    --color-mainColor-700: #282846;
+    --color-textColor: #151527;
+    --color-mainGradient: linear-gradient(273deg, #393962 2.21%, #7474c8 116.89%);
+    --color-mainGradientHover: linear-gradient(273deg, #7474c8 0%, #393962 100%);
+    --color-stroke: #e0e0e0;
+    --color-subTitle: #616161;
+    --color-secondaryGradient: linear-gradient(271deg, #282846 51.73%, #d8d8ef 232.35%);
+    --color-secondaryGradientHover: linear-gradient(271deg, #3a3a5a 40%, #e8e8ff 220%);
+    --color-bgBackground: #f4f4f4;
+    --color-greenColor: #00a756;
+    --color-wrong: #f46854;
+    --color-rose: #f43f5e;
+    --btn-height: 50px;
+    --btn-width: 200px;
+    --btn-radius: 50px;
+
+    --padding-sectionPadding: 50px;
+}
+
+@layer base {
+    .container {
+        @apply container mx-auto;
+    }
+    .animate {
+        @apply transition-all duration-300;
+    }
+    .flex-center {
+        @apply flex items-center justify-center;
+    }
+
+    .btn-outline {
+        @apply h-[50px] rounded-[var(--btn-radius)] border border-mainColor font-bold text-mainColor transition-all duration-300;
+    }
+    .btn-outline:hover {
+        @apply bg-mainColor text-white;
+    }
+
+    .btn {
+        @apply relative h-[50px] overflow-hidden border-none font-bold text-white;
+        border-radius: var(--btn-radius);
+        transition: all 0.3s ease;
+        z-index: 1;
+        -webkit-border-radius: var(--btn-radius);
+        -moz-border-radius: var(--btn-radius);
+        -ms-border-radius: var(--btn-radius);
+        -o-border-radius: var(--btn-radius);
+    }
+
+    .gap {
+        @apply gap-4 sm:gap-5 lg:gap-6;
+    }
+
+    .section-padding {
+        @apply py-8 lg:py-[var(--padding-sectionPadding)];
+    }
+
+    .main-rounded {
+        @apply rounded-[20px];
+    }
+
+    .section-header {
+        @apply border-b border-b-stroke pb-3 text-lg font-semibold;
+    }
+    .dashBoard-subContainer {
+        @apply rounded-3xl border border-stroke bg-white p-6 drop-shadow-sm;
+    }
+
+    .y-animate {
+        @apply transition-all duration-300 ease-in-out hover:translate-y-[-8px] hover:!drop-shadow-xl;
+    }
+
+    .b-stroke {
+        @apply border-b border-b-stroke py-3;
+    }
+}
+
+/* ============== utilities ================ */
+
+.btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: inherit;
+}
+
+.btn-primary {
+    background-image: var(--color-mainGradient);
+    background-size: 100%;
+}
+
+.btn-primary::before {
+    background-image: var(--color-mainGradientHover);
+}
+
+.btn-secondary {
+    background-image: var(--color-secondaryGradient);
+}
+
+.btn-secondary::before {
+    background-image: var(--color-secondaryGradientHover);
+}
+
+.btn:hover::before {
+    opacity: 1;
+}
+
+media (width >= 64rem /* 1024px */) {
+    padding: 32px 0px;
+}
+
+/* ============== utilities ================ */
+
+/* base */
+html {
+    font-family: var(--font-mainFont);
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    padding: 0 !important;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    pointer-events: none;
+}
+
+.container {
+    /* width: 100%; */
+    margin: auto;
+
+    @media (width < 40rem /* 640px */) {
+        width: 100%;
+        padding-right: 16px !important;
+        padding-left: 16px !important;
+    }
+    @media (width >= 40rem /* 640px */) {
+        max-width: 42rem;
+    }
+    @media (width >= 48rem /* 768px */) {
+        max-width: 47rem;
+    }
+    @media (width >= 64rem /* 1024px */) {
+        max-width: 60rem /* 1024 */;
+    }
+    @media (width >= 80rem /* 1280px */) {
+        max-width: 80rem /* 1280 */;
+    }
+}
+
+/* Hide number input spinners in Chrome, Safari, Edge */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Hide number input spinners in Firefox */
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+.table-scrollbar::-webkit-scrollbar {
+    height: 10px; /* for horizontal scroll */
+}
+
+.table-scrollbar::-webkit-scrollbar-thumb {
+    background-color: var(--color-mainColor);
+    border-radius: 4px;
+    -webkit-border-radius:;
+    -moz-border-radius:;
+    -ms-border-radius:;
+    -o-border-radius:;
+}
+
+.table-scrollbar::-webkit-scrollbar-track {
+    background: var(--color-mainColor-100);
+}
