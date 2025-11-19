@@ -1,0 +1,835 @@
+
+C:\Users\user\Downloads\Education-main
+λ tree /f
+Folder PATH listing
+Volume serial number is 00000259 E21D:0F77
+C:.
+│   .editorconfig
+│   .gitattributes
+│   .gitignore
+│   .htaccess
+│   .prettierignore
+│   .prettierrc
+│   apple-touch-icon.png
+│   artisan
+│   bash.exe.stackdump
+│   components.json
+│   composer.json
+│   composer.lock
+│   eslint.config.js
+│   favicon.ico
+│   favicon.svg
+│   index.php
+│   logo.svg
+│   package-lock.json
+│   package.json
+│   phpunit.xml
+│   robots.txt
+│   structure.txt
+│   tsconfig.json
+│   vite.config.ts
+│
+├───.github
+│   └───workflows
+│           lint.yml
+│           tests.yml
+│
+├───app
+│   ├───Http
+│   │   ├───Controllers
+│   │   │   │   Controller.php
+│   │   │   │
+│   │   │   ├───Auth
+│   │   │   │       AuthenticatedSessionController.php
+│   │   │   │       ConfirmablePasswordController.php
+│   │   │   │       EmailVerificationNotificationController.php
+│   │   │   │       EmailVerificationPromptController.php
+│   │   │   │       NewPasswordController.php
+│   │   │   │       PasswordResetLinkController.php
+│   │   │   │       RegisteredUserController.php
+│   │   │   │       VerifyEmailController.php
+│   │   │   │
+│   │   │   └───Settings
+│   │   │           PasswordController.php
+│   │   │           ProfileController.php
+│   │   │
+│   │   ├───Middleware
+│   │   │       HandleAppearance.php
+│   │   │       HandleInertiaRequests.php
+│   │   │
+│   │   └───Requests
+│   │       ├───Auth
+│   │       │       LoginRequest.php
+│   │       │
+│   │       └───Settings
+│   │               ProfileUpdateRequest.php
+│   │
+│   ├───Models
+│   │       User.php
+│   │
+│   └───Providers
+│           AppServiceProvider.php
+│
+├───bootstrap
+│   │   app.php
+│   │   providers.php
+│   │
+│   └───cache
+│           .gitignore
+│
+├───config
+│       app.php
+│       auth.php
+│       cache.php
+│       database.php
+│       filesystems.php
+│       inertia.php
+│       logging.php
+│       mail.php
+│       queue.php
+│       services.php
+│       session.php
+│
+├───database
+│   │   .gitignore
+│   │
+│   ├───factories
+│   │       UserFactory.php
+│   │
+│   ├───migrations
+│   │       0001_01_01_000000_create_users_table.php
+│   │       0001_01_01_000001_create_cache_table.php
+│   │       0001_01_01_000002_create_jobs_table.php
+│   │       2024_01_01_000000_create_users_table.php
+│   │
+│   └───seeders
+│           DatabaseSeeder.php
+│
+├───resources
+│   │   .txt
+│   │
+│   ├───css
+│   │       app.css
+│   │       loadingBar.css
+│   │
+│   ├───js
+│   │   │   app.tsx
+│   │   │   layout.tsx
+│   │   │   main.tsx
+│   │   │
+│   │   ├───assets
+│   │   │   │   book.png
+│   │   │   │   colorfullogo.svg
+│   │   │   │   hero.png
+│   │   │   │   logo.svg
+│   │   │   │   logo2.svg
+│   │   │   │   logo3.svg
+│   │   │   │   sectionLine.png
+│   │   │   │
+│   │   │   ├───lessons
+│   │   │   │       1.png
+│   │   │   │       2.jpg
+│   │   │   │
+│   │   │   └───subjects
+│   │   │           1.png
+│   │   │           2.png
+│   │   │           3.png
+│   │   │           4.png
+│   │   │
+│   │   ├───modules
+│   │   │   │   index.ts
+│   │   │   │
+│   │   │   ├───auth
+│   │   │   │   │   layout.tsx
+│   │   │   │   │
+│   │   │   │   ├───components
+│   │   │   │   │       AnimatingFormBody.tsx
+│   │   │   │   │       AnimatingFormHeader.tsx
+│   │   │   │   │       FixedLogoSection.tsx
+│   │   │   │   │       PageHeader.tsx
+│   │   │   │   │       PasswordInput.tsx
+│   │   │   │   │
+│   │   │   │   ├───context
+│   │   │   │   │       resetCtx.tsx
+│   │   │   │   │
+│   │   │   │   └───screens
+│   │   │   │       ├───forgetPassword
+│   │   │   │       │   ├───requestOtp
+│   │   │   │       │   │       request-otp-screen.tsx
+│   │   │   │       │   │
+│   │   │   │       │   ├───resetPassword
+│   │   │   │       │   │       reset-password-screen.tsx
+│   │   │   │       │   │
+│   │   │   │       │   └───submitOtp
+│   │   │   │       │       │   submit-otp-screen.tsx
+│   │   │   │       │       │
+│   │   │   │       │       └───components
+│   │   │   │       │               OtpForm.tsx
+│   │   │   │       │               OtpInput.tsx
+│   │   │   │       │               TimerCountDown.tsx
+│   │   │   │       │
+│   │   │   │       ├───parentSignIn
+│   │   │   │       │   │   parent-signin-page.tsx
+│   │   │   │       │   │
+│   │   │   │       │   ├───features
+│   │   │   │       │   │       SiginInForm.tsx
+│   │   │   │       │   │
+│   │   │   │       │   └───hooks
+│   │   │   │       │           useSignIn.ts
+│   │   │   │       │
+│   │   │   │       ├───signup
+│   │   │   │       │   │   signup-screen.tsx
+│   │   │   │       │   │
+│   │   │   │       │   ├───features
+│   │   │   │       │   │       SignUpForm.tsx
+│   │   │   │       │   │
+│   │   │   │       │   └───hooks
+│   │   │   │       │           useSignupForm.ts
+│   │   │   │       │
+│   │   │   │       └───SingIn
+│   │   │   │           │   signin-screen.tsx
+│   │   │   │           │
+│   │   │   │           ├───features
+│   │   │   │           │   └───singupForm
+│   │   │   │           │           SignInForm.tsx
+│   │   │   │           │
+│   │   │   │           └───hooks
+│   │   │   │                   useSignInForm.ts
+│   │   │   │
+│   │   │   ├───books
+│   │   │   │   └───screens
+│   │   │   │       ├───bookPage
+│   │   │   │       │       book-page-screen.tsx
+│   │   │   │       │       book.ts
+│   │   │   │       │
+│   │   │   │       └───booksList
+│   │   │   │           │   book-list-screen.tsx
+│   │   │   │           │
+│   │   │   │           ├───data
+│   │   │   │           │       books.ts
+│   │   │   │           │       options.ts
+│   │   │   │           │
+│   │   │   │           ├───features
+│   │   │   │           │   ├───FilteredBooks
+│   │   │   │           │   │       FilteredBooks.tsx
+│   │   │   │           │   │
+│   │   │   │           │   └───filterSideBar
+│   │   │   │           │           FilterSideBar.tsx
+│   │   │   │           │
+│   │   │   │           └───hooks
+│   │   │   │                   useFilterOptions.tsx
+│   │   │   │
+│   │   │   ├───cart
+│   │   │   │   │   cart-screen.tsx
+│   │   │   │   │   cart.ts
+│   │   │   │   │
+│   │   │   │   ├───context
+│   │   │   │   │       DeliveryInfoFormCtx.tsx
+│   │   │   │   │
+│   │   │   │   └───features
+│   │   │   │       ├───addAddressBtn
+│   │   │   │       │       AddAddressBtn.tsx
+│   │   │   │       │
+│   │   │   │       ├───AddAddressModel
+│   │   │   │       │   │   AddAddressModel.tsx
+│   │   │   │       │   │
+│   │   │   │       │   └───components
+│   │   │   │       │           DeliveryForm.tsx
+│   │   │   │       │
+│   │   │   │       ├───deliveryIfno
+│   │   │   │       │       DeliveryInfo.tsx
+│   │   │   │       │
+│   │   │   │       ├───orderSummary
+│   │   │   │       │       OrderSummary.tsx
+│   │   │   │       │
+│   │   │   │       └───table
+│   │   │   │           │   Table.tsx
+│   │   │   │           │
+│   │   │   │           └───components
+│   │   │   │                   TableCustomRow.tsx
+│   │   │   │                   TableCustomRowMobile.tsx
+│   │   │   │                   TableHeader.tsx
+│   │   │   │
+│   │   │   ├───contactUs
+│   │   │   │   │   contactUs-screen.tsx
+│   │   │   │   │
+│   │   │   │   └───features
+│   │   │   │       ├───ContactForm
+│   │   │   │       │       ContactForm.tsx
+│   │   │   │       │
+│   │   │   │       └───SiteInfo
+│   │   │   │               SiteInfo.tsx
+│   │   │   │
+│   │   │   ├───courses
+│   │   │   │   │   course.ts
+│   │   │   │   │
+│   │   │   │   ├───components
+│   │   │   │   │       AboutCourse.tsx
+│   │   │   │   │       AboutCourseSk.tsx
+│   │   │   │   │       CourseContentSk.tsx
+│   │   │   │   │       CourseDetails.tsx
+│   │   │   │   │       CourseDetailsSk.tsx
+│   │   │   │   │
+│   │   │   │   └───screens
+│   │   │   │       ├───checkout
+│   │   │   │       │   │   checkout-screen.tsx
+│   │   │   │       │   │
+│   │   │   │       │   └───features
+│   │   │   │       │       ├───InvoiceForm
+│   │   │   │       │       │       InvoiceForm.tsx
+│   │   │   │       │       │
+│   │   │   │       │       └───InvoiceSummary
+│   │   │   │       │               InvoiceSummary.tsx
+│   │   │   │       │               InvoiceSummarySk.tsx
+│   │   │   │       │
+│   │   │   │       ├───coursePage
+│   │   │   │       │   │   course-page-screen.tsx
+│   │   │   │       │   │
+│   │   │   │       │   ├───context
+│   │   │   │       │   │       activeSubSectionCtx.tsx
+│   │   │   │       │   │
+│   │   │   │       │   └───features
+│   │   │   │       │       ├───CourseInfo
+│   │   │   │       │       │   │   CourseInfo.tsx
+│   │   │   │       │       │   │   CourseInfoSk.tsx
+│   │   │   │       │       │   │
+│   │   │   │       │       │   └───components
+│   │   │   │       │       │           AboutCourse.tsx
+│   │   │   │       │       │           CourseContent.tsx
+│   │   │   │       │       │
+│   │   │   │       │       └───coursePreview
+│   │   │   │       │           │   CoursePreview.tsx
+│   │   │   │       │           │   CoursePreviewSk.tsx
+│   │   │   │       │           │
+│   │   │   │       │           └───components
+│   │   │   │       │                   SubSectionArea.tsx
+│   │   │   │       │                   TeacherInfo.tsx
+│   │   │   │       │
+│   │   │   │       ├───coursesList
+│   │   │   │       │   │   courses-list-screen.tsx
+│   │   │   │       │   │
+│   │   │   │       │   ├───data
+│   │   │   │       │   │       courses.ts
+│   │   │   │       │   │       options.ts
+│   │   │   │       │   │
+│   │   │   │       │   ├───features
+│   │   │   │       │   │   ├───filterdCourses
+│   │   │   │       │   │   │       FilteredCourses.tsx
+│   │   │   │       │   │   │
+│   │   │   │       │   │   └───filterSideBar
+│   │   │   │       │   │       │   FilterSideBar.tsx
+│   │   │   │       │   │       │
+│   │   │   │       │   │       └───components
+│   │   │   │       │   │               PriceRange.tsx
+│   │   │   │       │   │
+│   │   │   │       │   └───hooks
+│   │   │   │       │           useFilterOptions.ts
+│   │   │   │       │
+│   │   │   │       └───coursOverView
+│   │   │   │           │   course-overview-screen.tsx
+│   │   │   │           │
+│   │   │   │           └───features
+│   │   │   │               ├───courseInfo
+│   │   │   │               │   │   CourseInfo.tsx
+│   │   │   │               │   │
+│   │   │   │               │   └───components
+│   │   │   │               │           CourseContent.tsx
+│   │   │   │               │
+│   │   │   │               └───courseSummary
+│   │   │   │                       CourseSummary.tsx
+│   │   │   │                       CourseSummarySk.tsx
+│   │   │   │
+│   │   │   ├───home
+│   │   │   │   │   home-screen.tsx
+│   │   │   │   │
+│   │   │   │   ├───features
+│   │   │   │   │   ├───heroSection
+│   │   │   │   │   │   │   hero-section.tsx
+│   │   │   │   │   │   │
+│   │   │   │   │   │   └───components
+│   │   │   │   │   │           HeroCircle.tsx
+│   │   │   │   │   │           HeroContent.tsx
+│   │   │   │   │   │
+│   │   │   │   │   ├───mainCourses
+│   │   │   │   │   │   │   courses.ts
+│   │   │   │   │   │   │   main-courses.tsx
+│   │   │   │   │   │   │
+│   │   │   │   │   │   └───components
+│   │   │   │   │   │           CustomSectionFilter.tsx
+│   │   │   │   │   │           filters.ts
+│   │   │   │   │   │           SectionFilters.tsx
+│   │   │   │   │   │
+│   │   │   │   │   ├───mainSubjects
+│   │   │   │   │   │       main-subjects.tsx
+│   │   │   │   │   │       subjects.ts
+│   │   │   │   │   │
+│   │   │   │   │   ├───mainTeachers
+│   │   │   │   │   │   │   main-teachers.tsx
+│   │   │   │   │   │   │   teachers.ts
+│   │   │   │   │   │   │
+│   │   │   │   │   │   └───components
+│   │   │   │   │   │           CustomTeacherCard.tsx
+│   │   │   │   │   │           CustomTeacherCardSk.tsx
+│   │   │   │   │   │
+│   │   │   │   │   ├───monthSubscriptionPromo
+│   │   │   │   │   │       month-subscription-promo.tsx
+│   │   │   │   │   │       pros.ts
+│   │   │   │   │   │
+│   │   │   │   │   ├───ourFeatures
+│   │   │   │   │   │   │   features.ts
+│   │   │   │   │   │   │   our-features.tsx
+│   │   │   │   │   │   │
+│   │   │   │   │   │   └───components
+│   │   │   │   │   │           CustomFeature.tsx
+│   │   │   │   │   │
+│   │   │   │   │   └───topStudents
+│   │   │   │   │           students.ts
+│   │   │   │   │           top-students.tsx
+│   │   │   │   │
+│   │   │   │   └───shared
+│   │   │   │       └───components
+│   │   │   │               SectionTitle.tsx
+│   │   │   │
+│   │   │   ├───parentDashboard
+│   │   │   │   │   layout.tsx
+│   │   │   │   │
+│   │   │   │   ├───components
+│   │   │   │   │       Header.tsx
+│   │   │   │   │       SideBar.tsx
+│   │   │   │   │
+│   │   │   │   ├───data
+│   │   │   │   │       SideBarLinks.ts
+│   │   │   │   │
+│   │   │   │   └───screens
+│   │   │   │       ├───analytics
+│   │   │   │       │   │   analytics-screen.tsx
+│   │   │   │       │   │   parent-analytics.tsx
+│   │   │   │       │   │
+│   │   │   │       │   ├───components
+│   │   │   │       │   │       ParentOverviewCustomCard.tsx
+│   │   │   │       │   │
+│   │   │   │       │   └───features
+│   │   │   │       │       ├───ActivityDetails
+│   │   │   │       │       │   │   ActivityDetails.tsx
+│   │   │   │       │       │   │
+│   │   │   │       │       │   └───components
+│   │   │   │       │       │           ActivityDetailsCustomCard.tsx
+│   │   │   │       │       │
+│   │   │   │       │       ├───FinancialSummary
+│   │   │   │       │       │       FinancialSummary.tsx
+│   │   │   │       │       │
+│   │   │   │       │       ├───ParentOverview
+│   │   │   │       │       │       ParentOverview.tsx
+│   │   │   │       │       │
+│   │   │   │       │       └───PerformanceSummary
+│   │   │   │       │           │   PerformanceSummary.tsx
+│   │   │   │       │           │
+│   │   │   │       │           └───components
+│   │   │   │       │                   DoughnutChart.tsx
+│   │   │   │       │                   PerformanceSummaryCustomCard.tsx
+│   │   │   │       │
+│   │   │   │       ├───courses
+│   │   │   │       │   │   courses-screen.tsx
+│   │   │   │       │   │   courses.ts
+│   │   │   │       │   │
+│   │   │   │       │   └───features
+│   │   │   │       │       └───UserCourses
+│   │   │   │       │           │   columns.tsx
+│   │   │   │       │           │   UserCourses.tsx
+│   │   │   │       │           │
+│   │   │   │       │           └───components
+│   │   │   │       │                   UserCourseMobileCard.tsx
+│   │   │   │       │                   UserCoursesTable.tsx
+│   │   │   │       │
+│   │   │   │       ├───exams
+│   │   │   │       │   │   exams-screen.tsx
+│   │   │   │       │   │   exams.ts
+│   │   │   │       │   │
+│   │   │   │       │   └───features
+│   │   │   │       │       ├───ExamResult
+│   │   │   │       │       │   │   ExamResult.tsx
+│   │   │   │       │       │   │
+│   │   │   │       │       │   └───components
+│   │   │   │       │       │           Answers.tsx
+│   │   │   │       │       │           QuestionResult.tsx
+│   │   │   │       │       │           ResultChart.tsx
+│   │   │   │       │       │
+│   │   │   │       │       └───UserExams
+│   │   │   │       │               columns.tsx
+│   │   │   │       │               UserExams.tsx
+│   │   │   │       │
+│   │   │   │       └───invoices
+│   │   │   │           │   invoices-screen.tsx
+│   │   │   │           │   invoices.ts
+│   │   │   │           │
+│   │   │   │           └───features
+│   │   │   │               └───UserInvoices
+│   │   │   │                   │   columns.tsx
+│   │   │   │                   │   UserInvoices.tsx
+│   │   │   │                   │
+│   │   │   │                   └───components
+│   │   │   │                           InvoiceMobileCard.tsx
+│   │   │   │                           InvoiceModel.tsx
+│   │   │   │
+│   │   │   ├───subjects
+│   │   │   │   │   subjects-screen.tsx
+│   │   │   │   │   subjects.ts
+│   │   │   │   │
+│   │   │   │   └───features
+│   │   │   │       └───subjectsSection
+│   │   │   │               SubjectsSection.tsx
+│   │   │   │
+│   │   │   ├───teachers
+│   │   │   │   │   defaultSettings.ts
+│   │   │   │   │   grades.ts
+│   │   │   │   │   TeacherPageLayout.tsx
+│   │   │   │   │
+│   │   │   │   ├───components
+│   │   │   │   │       FilterBar.tsx
+│   │   │   │   │
+│   │   │   │   ├───features
+│   │   │   │   │   └───PagesOptions
+│   │   │   │   │           PagesOptions.tsx
+│   │   │   │   │
+│   │   │   │   ├───hooks
+│   │   │   │   │       useFilterBar.ts
+│   │   │   │   │
+│   │   │   │   └───screens
+│   │   │   │       ├───teacherBooks
+│   │   │   │       │   │   books.ts
+│   │   │   │       │   │   teacher-books-screen.tsx
+│   │   │   │       │   │
+│   │   │   │       │   └───features
+│   │   │   │       │       └───BooksSection
+│   │   │   │       │               BooksSection.tsx
+│   │   │   │       │
+│   │   │   │       ├───teacherCourses
+│   │   │   │       │   │   courses.ts
+│   │   │   │       │   │   teacher-courses-screen.tsx
+│   │   │   │       │   │
+│   │   │   │       │   └───features
+│   │   │   │       │       └───Courses
+│   │   │   │       │               CoursesSection.tsx
+│   │   │   │       │
+│   │   │   │       ├───teacherOverView
+│   │   │   │       │   │   teacher-screen.tsx
+│   │   │   │       │   │   teacher.ts
+│   │   │   │       │   │
+│   │   │   │       │   └───features
+│   │   │   │       │       └───teacherOverView
+│   │   │   │       │           │   TeacherOverView.tsx
+│   │   │   │       │           │
+│   │   │   │       │           └───components
+│   │   │   │       │                   OverViewActions.tsx
+│   │   │   │       │                   TeacherInfo.tsx
+│   │   │   │       │
+│   │   │   │       ├───teachersExams
+│   │   │   │       │       exams.ts
+│   │   │   │       │       teacher-exams-screen.tsx
+│   │   │   │       │
+│   │   │   │       └───teachersList
+│   │   │   │           │   teachers-list-screen.tsx
+│   │   │   │           │
+│   │   │   │           ├───data
+│   │   │   │           │       options.ts
+│   │   │   │           │       teachers.ts
+│   │   │   │           │
+│   │   │   │           ├───features
+│   │   │   │           │   ├───filterdTeachers
+│   │   │   │           │   │       courses.ts
+│   │   │   │           │   │       FilteredTeachers.tsx
+│   │   │   │           │   │
+│   │   │   │           │   └───filterSideBar
+│   │   │   │           │           FilterSideBar.tsx
+│   │   │   │           │
+│   │   │   │           └───hooks
+│   │   │   │                   useFilterOptions.ts
+│   │   │   │
+│   │   │   └───userDashboard
+│   │   │       │   layout.tsx
+│   │   │       │
+│   │   │       ├───components
+│   │   │       │       DoughnutChart.tsx
+│   │   │       │       Header.tsx
+│   │   │       │       SideBar.tsx
+│   │   │       │       Table.tsx
+│   │   │       │
+│   │   │       ├───data
+│   │   │       │       SideBarLinks.ts
+│   │   │       │
+│   │   │       └───screens
+│   │   │           ├───analytics
+│   │   │           │   │   analytics-screen.tsx
+│   │   │           │   │   analytics.ts
+│   │   │           │   │
+│   │   │           │   └───features
+│   │   │           │       ├───ActivityDetails
+│   │   │           │       │   │   ActivityDetails.tsx
+│   │   │           │       │   │
+│   │   │           │       │   └───components
+│   │   │           │       │           ActivityDetailsCustomCard.tsx
+│   │   │           │       │
+│   │   │           │       ├───PerformanceSummary
+│   │   │           │       │   │   PerformanceSummary.tsx
+│   │   │           │       │   │
+│   │   │           │       │   └───components
+│   │   │           │       │           PerformanceSummaryCustomCard.tsx
+│   │   │           │       │
+│   │   │           │       └───UserOverview
+│   │   │           │           │   UserOverView.tsx
+│   │   │           │           │
+│   │   │           │           └───components
+│   │   │           │                   UserOverViewCustomCard.tsx
+│   │   │           │
+│   │   │           ├───exams
+│   │   │           │   └───screen
+│   │   │           │       ├───examPage
+│   │   │           │       │   │   exam-page-screen.tsx
+│   │   │           │       │   │   exam.ts
+│   │   │           │       │   │
+│   │   │           │       │   ├───context
+│   │   │           │       │   │       ExamContext.tsx
+│   │   │           │       │   │
+│   │   │           │       │   ├───features
+│   │   │           │       │   │   ├───QuestionNavigator
+│   │   │           │       │   │   │       QuestionNavigator.tsx
+│   │   │           │       │   │   │
+│   │   │           │       │   │   └───QuestionSection
+│   │   │           │       │   │       │   QuestionSection.tsx
+│   │   │           │       │   │       │
+│   │   │           │       │   │       └───components
+│   │   │           │       │   │               QuestionAction.tsx
+│   │   │           │       │   │               QuestionProgressHeader.tsx
+│   │   │           │       │   │               SelectQuestion.tsx
+│   │   │           │       │   │               TextQuestion.tsx
+│   │   │           │       │   │
+│   │   │           │       │   └───hooks
+│   │   │           │       │           useExamTime.tsx
+│   │   │           │       │
+│   │   │           │       ├───examResult
+│   │   │           │       │   │   ExamResult.tsx
+│   │   │           │       │   │   result.ts
+│   │   │           │       │   │
+│   │   │           │       │   ├───components
+│   │   │           │       │   │       OverViewNavigatorFooter.tsx
+│   │   │           │       │   │
+│   │   │           │       │   ├───features
+│   │   │           │       │   │   └───ResultOverView
+│   │   │           │       │   │           ResultOverView.tsx
+│   │   │           │       │   │
+│   │   │           │       │   └───screens
+│   │   │           │       │       ├───resultOverViewScreen
+│   │   │           │       │       │   │   result-overview-screen.tsx
+│   │   │           │       │       │   │
+│   │   │           │       │       │   └───features
+│   │   │           │       │       │       ├───QuestionsResult
+│   │   │           │       │       │       │       QuestionResult.tsx
+│   │   │           │       │       │       │
+│   │   │           │       │       │       └───ResultChart
+│   │   │           │       │       │               ResultChart.tsx
+│   │   │           │       │       │
+│   │   │           │       │       └───resultQuestionsScreen
+│   │   │           │       │           │   ResultQusetionsScreen.tsx
+│   │   │           │       │           │
+│   │   │           │       │           └───features
+│   │   │           │       │               ├───QuestionNavigator
+│   │   │           │       │               │   │   QuestionNavigator.tsx
+│   │   │           │       │               │   │
+│   │   │           │       │               │   └───components
+│   │   │           │       │               │           QuestionNavigatorFooterFooter.tsx
+│   │   │           │       │               │
+│   │   │           │       │               └───QuestionResult
+│   │   │           │       │                       QuestionResult.tsx
+│   │   │           │       │
+│   │   │           │       └───exams
+│   │   │           │           │   exams-screen.tsx
+│   │   │           │           │   exams.ts
+│   │   │           │           │
+│   │   │           │           ├───components
+│   │   │           │           │       ExamMobileCard.tsx
+│   │   │           │           │
+│   │   │           │           └───features
+│   │   │           │               │   columns.tsx
+│   │   │           │               │
+│   │   │           │               ├───completedExams
+│   │   │           │               │       CompletedExams.tsx
+│   │   │           │               │
+│   │   │           │               └───pendingExams
+│   │   │           │                       PendingExams.tsx
+│   │   │           │
+│   │   │           ├───myCourses
+│   │   │           │   │   courses.ts
+│   │   │           │   │   my-courses-screen.tsx
+│   │   │           │   │
+│   │   │           │   └───features
+│   │   │           │       └───UserCourses
+│   │   │           │           │   columns.tsx
+│   │   │           │           │   UserCourses.tsx
+│   │   │           │           │
+│   │   │           │           └───components
+│   │   │           │                   UserCourseMobileCard.tsx
+│   │   │           │                   UserCoursesTable.tsx
+│   │   │           │
+│   │   │           ├───myFiles
+│   │   │           │   │   files.ts
+│   │   │           │   │   my-files-screen.tsx
+│   │   │           │   │
+│   │   │           │   └───components
+│   │   │           │           CustomMyFileCard.tsx
+│   │   │           │
+│   │   │           ├───myInvoices
+│   │   │           │   │   invoices.ts
+│   │   │           │   │   my-invoices-screen.tsx
+│   │   │           │   │
+│   │   │           │   └───features
+│   │   │           │       └───UserInvoices
+│   │   │           │           │   columns.tsx
+│   │   │           │           │   UserInvoices.tsx
+│   │   │           │           │
+│   │   │           │           └───components
+│   │   │           │                   InvoiceMobileCard.tsx
+│   │   │           │
+│   │   │           └───settings
+│   │   │               │   settings-screen.tsx
+│   │   │               │   User.ts
+│   │   │               │
+│   │   │               └───features
+│   │   │                   ├───ResetPassword
+│   │   │                   │       ResetPassword.tsx
+│   │   │                   │
+│   │   │                   ├───UserImage
+│   │   │                   │       UserImage.tsx
+│   │   │                   │
+│   │   │                   └───UserInfo
+│   │   │                       │   data.ts
+│   │   │                       │   UserInfo.tsx
+│   │   │                       │
+│   │   │                       └───hooks
+│   │   │                               useUserInfoForm.ts
+│   │   │
+│   │   ├───routes
+│   │   │       AppRouter.tsx
+│   │   │       paths.ts
+│   │   │
+│   │   └───shared
+│   │       ├───components
+│   │       │   │   CustomCard.tsx
+│   │       │   │   Pagination.tsx
+│   │       │   │   ScrollToTop.tsx
+│   │       │   │
+│   │       │   ├───layout
+│   │       │   │       CartBar.tsx
+│   │       │   │       Footer.tsx
+│   │       │   │       Header.tsx
+│   │       │   │       PageNav.tsx
+│   │       │   │
+│   │       │   └───ui
+│   │       │       │   Accordion.tsx
+│   │       │       │   BookCard.tsx
+│   │       │       │   CheckBoxList.tsx
+│   │       │       │   CloseButton.tsx
+│   │       │       │   ComboBox.tsx
+│   │       │       │   CustomSubject.tsx
+│   │       │       │   DashBoardContainer.tsx
+│   │       │       │   FormInput.tsx
+│   │       │       │   FormInputWithLabel.tsx
+│   │       │       │   GridView.tsx
+│   │       │       │   LoadingBar.tsx
+│   │       │       │   Modal.tsx
+│   │       │       │   Overlay.tsx
+│   │       │       │   PageTitle.tsx
+│   │       │       │   QuantitySelector.tsx
+│   │       │       │   SearchBox.tsx
+│   │       │       │   SearchInput.tsx
+│   │       │       │
+│   │       │       └───Skeletons
+│   │       │               CustomCardSk.tsx
+│   │       │               CustomSubjectSk.tsx
+│   │       │
+│   │       ├───context
+│   │       │       NavBarToogleBtnsCtx.tsx
+│   │       │
+│   │       ├───data
+│   │       │       cart.ts
+│   │       │       navLinks.ts
+│   │       │
+│   │       ├───hooks
+│   │       │       usePageTitle.ts
+│   │       │       useScrollLock.ts
+│   │       │       useSideBar.ts
+│   │       │
+│   │       ├───services
+│   │       │       formServices.ts
+│   │       │
+│   │       └───utils
+│   │               arabicPlural.ts
+│   │               checkPhoneValidation.ts
+│   │               chunkWithSlice.ts
+│   │               createCrumb.tsx
+│   │               defaultSettings.ts
+│   │               priceFormatter.ts
+│   │
+│   └───views
+│           app.blade.php
+│
+├───routes
+│       auth.php
+│       console.php
+│       settings.php
+│       web.php
+│
+├───storage
+│   ├───app
+│   │   │   .gitignore
+│   │   │
+│   │   ├───private
+│   │   │       .gitignore
+│   │   │
+│   │   └───public
+│   │           .gitignore
+│   │
+│   ├───framework
+│   │   │   .gitignore
+│   │   │
+│   │   ├───cache
+│   │   │   │   .gitignore
+│   │   │   │
+│   │   │   └───data
+│   │   │           .gitignore
+│   │   │
+│   │   ├───sessions
+│   │   │       .gitignore
+│   │   │
+│   │   ├───testing
+│   │   │       .gitignore
+│   │   │
+│   │   └───views
+│   │           .gitignore
+│   │
+│   └───logs
+│           .gitignore
+│
+├───tests
+│   │   Pest.php
+│   │   TestCase.php
+│   │
+│   ├───Feature
+│   │   │   DashboardTest.php
+│   │   │   ExampleTest.php
+│   │   │
+│   │   ├───Auth
+│   │   │       AuthenticationTest.php
+│   │   │       EmailVerificationTest.php
+│   │   │       PasswordConfirmationTest.php
+│   │   │       PasswordResetTest.php
+│   │   │       RegistrationTest.php
+│   │   │
+│   │   └───Settings
+│   │           PasswordUpdateTest.php
+│   │           ProfileUpdateTest.php
+│   │
+│   └───Unit
+│           ExampleTest.php
+│
+└───vendor
+    └───_laravel_ide
